@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema"notas"</title>
+</head>
+<body>
+    <script>
+        //entrada dos dados
+        //fazer um programa para ler as duas notas que um aluno obteve no  primeiro e no segundo semestre, mostrar a nota final que o aluno obteve (com uma casa decimal) se a nota final for inferior a 60.00 mostrar a menssagem "REPROVADO"
+        let nota1 = Number.parseFloat(prompt("Digite a primeitra nota"))
+        let nota2 = Number.parseFloat(prompt("Digite a segunda nota"))
+
+        let soma = nota1 + nota2;
+        if (soma <60){
+            alert(`Nota Final 
+            ${soma} Reprovado!`)
+        } else {
+            alert(`Nota Final ${soma}`)
+        }
+        
+    </script>
+    
+</body>
+</html>
