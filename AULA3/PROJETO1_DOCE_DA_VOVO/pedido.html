@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Faça seu Pedido - Delícias da Vovó</title>
+    </head>
+    <style>
+        body{
+            background-color: rgb(144, 202, 183);
+        }
+    </style>
+    <body>
+        <h1>Monte seu Pedido Online</h1>
+
+    </body>
+
+    <form action="#" method="get" autocomplete="off">
+
+        <p>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Nome"
+                required>
+        </p>
+        <p>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" name="telefone" id="telefone"
+                placeholder="9 9999-9999" required>
+        </p>
+        <hr>
+        <p>
+            <label for="dev">Cardapio:</label> <br>
+            <hr>
+
+            <input type="checkbox" id="bolocenoura" value="Bolo de Cenoura"
+                name="cardapio">
+
+            <label for="bolocenoura">Bolo de Cenoura:</label>
+            <label for="bolocenoura">Tamanho:</label>
+            <select name="bolocenoura" id="bolocenoura">
+                <option value="1kg">1 Kg</option>
+                <option value="2kg">2 Kg</option>
+            </select>
+            <input type="number" name="Bolo de Cenoura" id="bolocenoura"
+                placeholder="Quantidade" min="1">
+
+        </p>
+        <p>
+            <input type="checkbox" id="Brigadeiro" value="Brigadeiro"
+                name="Brigadeiro">
+            <label for="Brigadeiro">Brigadeiro:</label>
+            <label for="bolocenoura">Tamanho:</label>
+            <select name="Brigadeiro" id="Brigadeiro">
+                <option value="un">Unidade</option>
+                <option value="Cento">Cento</option>
+            </select>
+            <input type="number" name="Brigadeiro" id="Brigadeiro"
+                placeholder="Quantidade" min="1">
+
+        </p>
+        <p>
+            <input type="checkbox" id="Coxinha" value="Coxinha" name="Coxinha">
+            <label for="Coxinha">Coxinha:</label>
+            <label for="Coxinha">Tamanho:</label>
+            <select name="Coxinha" id="Coxinha">
+                <option value="un">Unidade</option>
+                <option value="Cento">Cento</option>
+            </select>
+            <input type="number" name="Coxinha" id="Coxinha"
+                placeholder="Quantidade" min="1">
+
+        </p>
+        <p>
+            <input type="checkbox" id="BolodeFuba" value="Bolo de Fubá"
+                name="Bolo de Fubá">
+            <label for="BolodeFuba">Bolo de Fubá:</label>
+            <label for="BolodeFuba">Tamanho:</label>
+            <select name="BolodeFuba" id="BolodeFuba">
+                <option value="1kg">1 Kg</option>
+                <option value="2kg">2 Kg</option>
+            </select>
+            <input type="number" name="BolodeFuba" id="BolodeFuba"
+                placeholder="Quantidade" min="1">
+
+        </p>
+        <p>
+            <input type="checkbox" id="Bolo de Chocolate"
+                value="BolodeChocolate" name="Bolo de Chocolate">
+            <label for="BolodeChocolate">Bolo de Chocolate:</label>
+            <label for="BolodeChocolate">Tamanho:</label>
+            <select name="BolodeChocolate" id="BolodeChocolate">
+                <option value="1kg">1 Kg</option>
+                <option value="2kg">2 Kg</option>
+            </select>
+            <input type="number" name="BolodeChocolate" id="BolodeChocolate"
+                placeholder="Quantidade" min="1">
+
+        </p>
+        <p>
+            <input type="checkbox" id="Beijinho" value="Beijinho"
+                name="Beijinho">
+            <label for="Beijinho">Beijinho:</label>
+            <label for="BolodeChocolate">Tamanho:</label>
+            <select name="BolodeChocolate" id="BolodeChocolate">
+                <option value="un">Unidade</option>
+                <option value="Cento">Cento</option>
+            </select>
+            <input type="number" name="Beijinho" id="Beijinho"
+                placeholder="Quantidade" min="1">
+
+        </p>
+        <p>
+            <input type="checkbox" id="PaodeMel" value="Pão de Mel"
+                name="Pão de Mel">
+            <label for="PaodeMel">Pão de Mel:</label>
+            <label for="PaodeMel">Tamanho:</label>
+            <select name="PaodeMel" id="PaodeMel">
+                <option value="un">Unidade</option>
+                <option value="Cento">Cento</option>
+            </select>
+            <input type="number" name="PaodeMel" id="PaodeMel"
+                placeholder="Quantidade" min="1">
+
+        </p>
+        <p>
+            <input type="checkbox" id="TortadeLimao" value="Torta de Limão"
+                name="Torta de Limão">
+            <label for="TortadeLimao">Torta de Limão:</label>
+            <label for="TortadeLimao">Tamanho:</label>
+            <select name="TortadeLimao" id="TortadeLimao">
+                <option value="1kg">1 Kg</option>
+                <option value="2kg">2 Kg</option>
+            </select>
+            <input type="number" name="TortadeLimao" id="TortadeLimao"
+                placeholder="Quantidade" min="1">
+
+        </p>
+        <p>
+            <input type="checkbox" id="Quindim" value="Quindim" name="Quindim">
+            <label for="Quindim">Quindim:</label>
+            <label for="Quindim">Tamanho:</label>
+            <select name="Quindim" id="Quindim">
+                <option value="1kg">1 Kg</option>
+                <option value="2kg">2 Kg</option>
+            </select>
+            <input type="number" name="Quindim" id="Quindim"
+                placeholder="Quantidade" min="1">
+
+        </p>
+
+        <button type="submit">Finalizar pedido</button>
+        <button type="reset">Limpar</button>
+
+    </form>
+    <hr>
+
+    <a href="index.html"><img src="img/de-volta.png" width="35"></a>
+</html>

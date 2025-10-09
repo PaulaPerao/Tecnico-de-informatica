@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../HTML_CSS"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ANDELSON"
+	}
+}

@@ -1,0 +1,16 @@
+body{
+    font-family: sans-serif;
+    padding: 20px;
+}
+h1{
+    text-align: center;
+}
+
+h2{
+    text-transform: uppercase;
+}
+
+
+p{
+    text-align: justify;
+}

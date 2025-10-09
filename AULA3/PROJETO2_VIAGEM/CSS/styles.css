@@ -1,0 +1,241 @@
+ body {
+     font-family: sans-serif;
+     background-color: beige;
+ }
+
+ footer {
+     text-align: center;
+     background-color: black;
+     padding: 20px;
+     margin-top: 10px;
+     color: white;
+     border-radius: 20px;
+ }
+
+ header {
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: center center;
+     background-color: lightgray;
+     min-height: 450px;
+     margin-bottom: 10px;
+     padding: 20px;
+     border-radius: 20px;
+ }
+
+ nav {
+
+     width: 100%;
+     text-align: center;
+     padding: 10px 0;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ }
+
+ /* PAGINA SOBRE*/
+
+ .menu {
+     list-style: none;
+     display: inline-flex;
+     margin: 0;
+     padding: 0;
+     background-color: #646363;
+ }
+
+ .menu li {
+     margin: 0;
+ }
+
+ .menu li a {
+     display: block;
+     padding: 15px 20px;
+     color: white;
+     text-decoration: none;
+     transition: 0.3s;
+ }
+
+ .menu li a:hover {
+     background-color: #555;
+ }
+
+ .logo {
+     text-align: center;
+ }
+
+ h1 {
+     text-align: center;
+     text-transform: uppercase;
+ }
+
+ h2 {
+     text-align: center;
+     text-transform: uppercase;
+ }
+
+ .sobrelogo {
+     text-align: center;
+ }
+
+ .navegacao {
+     background-color: #646363;
+     position: sticky;
+     top: 0;
+ }
+
+ .navegacao a {
+     margin: 0 1rem;
+     font-size: 1.4rem;
+     color: #fff;
+     text-decoration: none;
+ }
+
+ .navegacao a:hover {
+     color: var(--main-color);
+     border-bottom: 0.1rem solid var(--main-color);
+     padding-bottom: 0.5rem;
+     font-size: 2rem;
+ }
+
+ .body {
+     background-color: rgb(245, 212, 171);
+ }
+
+ .sobre {
+     padding: 35px;
+     margin-top: 10px;
+ }
+
+ .historia {
+     padding: 35px;
+ }
+
+ .missao {
+     padding: 35px;
+ }
+
+ .equipedes {
+     padding: 35px;
+ }
+
+ /* PAGINA DESTINOS*/
+
+ .national {
+     padding: 15px 20px 15px 20px;
+     background-color: rgb(238, 238, 156);
+ }
+
+ .nacional h2 {
+     text-align: center;
+ }
+
+ .internacional h2 {
+     text-align: center;
+ }
+
+ .international {
+     padding: 15px 20px 15px 20px;
+     margin-top: 20px;
+     background-color: rgb(182, 182, 117);
+ }
+
+ .topo {
+     padding: 20px;
+ }
+
+ .img {
+     text-align: center;
+ }
+
+ .img img:hover {
+     width: 480px;
+ }
+
+ .pe,
+ .pr,
+ .rj,
+ .ba,
+ .ma,
+ .rs,
+ .ms,
+ .mg,
+ .cd,
+ .ce {
+     padding: 30px;
+     margin-top: 15px;
+ }
+
+ .pe:hover,
+ .pr:hover,
+ .rj:hover,
+ .ba:hover,
+ .ma:hover,
+ .rs:hover,
+ .ms:hover,
+ .mg:hover,
+ .cd:hover,
+ .ce:hover {
+     background-color: beige;
+ }
+
+ .pf,
+ .ny,
+ .roma,
+ .toquio,
+ .bar,
+ .dubai,
+ .sydnei,
+ .africa,
+ .tailandia,
+ .londres {
+     padding: 35px;
+ }
+
+
+ .pf:hover,
+ .ny:hover,
+ .roma:hover,
+ .toquio:hover,
+ .bar:hover,
+ .dubai:hover,
+ .sydnei:hover,
+ .africa:hover,
+ .tailandia:hover,
+ .londres:hover {
+     background-color: beige;
+ }
+
+ /* PAGINA PROMOÇÃO*/
+
+ .national h2 {
+     text-align: left;
+ }
+
+ .international h2 {
+     text-align: left;
+ }
+
+ .nacional .title {
+     text-align: center;
+ }
+
+ .internacional .title {
+     text-align: center;
+ }
+
+ .nacional,
+ .internacional {
+     padding-top: 30px;
+ }
+
+ /* PAGINA DEPOIMENTO*/
+
+ .depoimento h2 {
+     text-align: left;
+ }
+
+
+ /* PAGINA INDEX*/
+
+ .body{
+    padding: 20px;
+    border-radius: 20px;
+ }

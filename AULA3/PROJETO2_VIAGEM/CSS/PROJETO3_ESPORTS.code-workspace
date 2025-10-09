@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../PROJETO3_ESPORTS"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "PROJETO3_ESPORTS"
+	}
+}

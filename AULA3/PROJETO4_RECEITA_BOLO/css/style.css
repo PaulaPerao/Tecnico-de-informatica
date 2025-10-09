@@ -1,0 +1,74 @@
+body {
+    font-family: sans-serif;
+    background-color: lightgoldenrodyellow;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(53, 83, 43);
+}
+
+h2 {
+    text-transform: uppercase;
+    color: rgb(20, 68, 83);
+}
+
+.ingrediente {
+    background-color: honeydew;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 20px;
+}
+
+.ingrediente li {
+    color: rgb(6, 94, 129);
+    list-style: square;
+}
+
+.ingrediente li:hover {
+    color: red;
+    font-weight: bold;
+    list-style: circle;
+}
+
+.preparo {
+    background-color: rgb(215, 230, 215);
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(167, 180, 180);
+    border-radius: 20px;
+}
+
+.preparo li {
+    color: rgb(4, 55, 75);
+    list-style: upper-roman;
+}
+
+.preparo li:hover {
+    color: red;
+    font-weight: bold;
+    list-style: decimal;
+}
+
+#observacao {
+    background-color: rgb(194, 206, 194);
+    padding: 20px;
+    border: 1px solid rgb(144, 153, 153);
+    border-radius: 20px;
+    color: rgb(8, 33, 43);
+}
+
+.img {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.img img {
+    width: 280px;
+}
+
+.img img:hover{
+    width: 300px;
+}
