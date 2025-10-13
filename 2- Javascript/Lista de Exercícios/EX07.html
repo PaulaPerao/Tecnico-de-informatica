@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema"dardo"</title>
+</head>
+<body>
+    <Script>
+        //No arremesso de dardo, o atleta tem três chances para lançar o dardo à maior distância que conseguir. Você deve criar um programa para, dadas as medidas das três tentativas de lançamento, informar qual foi a maior.
+
+        //Entrada de dados
+        let a = Number.parseFloat(prompt("Primeiro lançamento:"))
+        let b = Number.parseFloat(prompt("Segundo lançamento:"))
+        let c = Number.parseFloat(prompt("Terceiro lançamento:"))
+
+        if (a > b && a > c) {
+            alert(`Maior distância ${a}`)
+        } else if (b > a && b > c) {
+            alert(`Maior distância ${b}`)
+        } else {
+            alert(`Maior distância ${c}`)
+        }
+
+        /* && - E (AND)
+           || - OU (OR)
+           !  - NÃO (NOT) 
+        */
+
+    </Script>
+    
+</body>
+</html>

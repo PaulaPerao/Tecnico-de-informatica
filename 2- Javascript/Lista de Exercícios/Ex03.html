@@ -7,16 +7,26 @@
 </head>
 <body>
     <script>
-         //entrada dos dados fazer um programa para ler os três coeficientes de uma equação do segundo grau. Usando a fórmula de Baskara, calcular e mostrar os valores das raízes x1 e x2 da equação com quatro casas decimais, se a equação não possuir raizes reais
-        
-        
-        if (a < b && a < c){
+        //fazer um programa para ler três números inteiros. Em seguida, mostrar qual o menor dentre os três números lidos. Em caso de empate, mostrar apenas uma vez.
+    
+        //Entrada dos dados 
+        let a = Number.parseFloat(prompt("Digite o primeiro número"))
+        let b = Number.parseFloat(prompt("Digite o segundo número"))
+        let c = Number.parseFloat(prompt("Digite o terceiro número"))
+
+        if (a < b && a < c) {
             alert(`O menor número é ${a}`)
         } else if (b < a && b < c) {
             alert(`O menor número é ${b}`)
-        } else{
+        } else {
             alert(`O menor número é ${c}`)
         }
+
+        /* && - E (AND)
+           || - OU (OR)
+           !  - NÃO (NOT) 
+        */
+        
     </script>
 </body>
 </html>

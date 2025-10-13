@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema"glicose"</title>
+</head>
+<body>
+    <script>
+        //Fazer um programa para ler a quantidade de glicose no sangue de uma pessoa e depois mostrar na tela a classificação desta glicose de acordo com a tabela de referência ao lado.
+
+        //Entrada de dados
+        alert("Medição da Glicose")
+        let glicose = Number.parseFloat(prompt("Digite o valor da Glicose aferida:"))
+
+        if (glicose < 100) {
+            alert(`Classificação: Normal\nValor da Glicose: ${glicose} mg/dL`)
+        } else if (glicose >= 100 && glicose <= 140) {
+            alert(`Classificação: Elevado\nValor da Glicose: ${glicose} mg/dL`)
+        }
+         else {
+            alert(`Classificação: Diabetes\nValor da Glicose: ${glicose} mg/dL`)
+        }
+    </script>
+    
+</body>
+</html>

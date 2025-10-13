@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +7,9 @@
 </head>
 <body>
     <script>
-        //entrada dos dados fazer um programa para ler os três coeficientes de uma equação do segundo grau. Usando a fórmula de Baskara, calcular e mostrar os valores das raízes x1 e x2 da equação com quatro casas decimais, se a equação não possuir raizes reais
+        //fazer um programa para ler os três coeficientes de uma equação do segundo grau. Usando a fórmula de Bhaskara, calcular e mostrar os valores das raízes x1 e x2 da equação com quatro casas decimais, se a equação não possuir raizes reais, mostrar uma mensagem
          
+        //Entrada dos dados 
         let a = Number.parseFloat(prompt("Digite o coeficiente A"))
         let b = Number.parseFloat(prompt("Digite o coeficiente B"))
         let c = Number.parseFloat(prompt("Digite o coeficiente C"))
@@ -23,7 +24,7 @@
         // Calculando as duas raízes reais
         let x1 = (-b + Math.sqrt(delta)) / (2 * a);
         let x2 = (-b - Math.sqrt(delta)) / (2 * a);
-        alert(`x1 = ${x1.toFixed(4)}) /2x = ${x2.toFixed(4)}`)
+        alert(`x1 = ${x1.toFixed(4)}) /x2 = ${x2.toFixed(4)}`)
         }
         
             

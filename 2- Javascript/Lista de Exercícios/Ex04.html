@@ -7,7 +7,17 @@
 </head>
 <body>
     <script>
-        // 
+        //Uma operadora de telefonia cobra R$ 50,00 por um plano básico que dá direito a 100 minutos de telefone. Cada minuto que exceder a franquia de 100 minutos custa R$ 2,00. Fazer um programa para ler a quantidade de minutos que uma pessoa consumiu, daí mostrar o valor pago.
+        
+       //Entrada dos dados
+        let consumo = Number.parseFloat(prompt("Quantidade de Minutos consumidos:"))
+
+        if (consumo <= 100){
+            alert(`Valor a pagar: R$ 50,00`)
+        } else {
+            let pagar = 50.00 + ((consumo - 100) * 2)
+            alert(`Valor a pagar: R$ ${pagar.toFixed(2)}`)
+        }
     </script>
     
 </body>

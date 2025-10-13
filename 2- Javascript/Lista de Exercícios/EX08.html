@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema"temperatura"</title>
+</head>
+<body>
+    <script>
+        //Deseja-se converter uma medida de temperatura da escala Celsius para Fahrenheit ou vice-versa. Para isso, você deve construir um programa que leia a letra "C" ou "F" indicando em qual escala vai ser informada uma temperatura. Em seguida o programa deve mostrar a temperatura na outra escala com duas casas decimais. A seguir é dada a fórmula para converter de Fahrenheit para Celsius (você deve deduzir a fórmula de Celsius para Fahrenheit): 𝐶= 59 (𝐹−32):
+
+        //Entrada de dados
+        let escala = Number.parseFloat(prompt("Em qual escala você quer informar a temperatura? \n1 - Celsius \n2 - Fahrenheit"))
+        let temp = Number.parseFloat(prompt("Informe a temperatura: "))
+
+        //Processamento e Saída
+        if (escala == 1) {
+            let fahrenheit = (temp * 9 / 5) + 32
+            alert(`A temperatura de ${temp}°C corresponde a ${fahrenheit.toFixed(2)}°F`)
+        } else if (escala == 2) {   
+            let celsius = (temp - 32) * 5 / 9
+            alert(`A temperatura de ${temp}°F corresponde a ${celsius.toFixed(2)}°C`)
+        } else {
+            alert("Escala inválida!")
+        }           
+
+        /* && - E (AND)
+           || - OU (OR)
+           !  - NÃO (NOT) 
+        */
+    </script>
+    
+</body>
+</html>
