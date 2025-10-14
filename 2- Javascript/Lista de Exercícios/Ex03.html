@@ -1,32 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Problema"menor_de_tres"</title>
+    <title>Calculadora de Desconto</title>
 </head>
 <body>
+
+    <h1>Calculadora de Desconto</h1>
+
+    <label for="preco">Preço do Produto:</label>
+    <input type="number" id="preco" placeholder="Digite o preço do produto">
+
+    <button onclick="calcularDesconto()">Calcular Desconto</button>
+
+    <p>Valor do desconto: <span id="resultado"></span></p>
+
     <script>
-        //fazer um programa para ler três números inteiros. Em seguida, mostrar qual o menor dentre os três números lidos. Em caso de empate, mostrar apenas uma vez.
-    
-        //Entrada dos dados 
-        let a = Number.parseFloat(prompt("Digite o primeiro número"))
-        let b = Number.parseFloat(prompt("Digite o segundo número"))
-        let c = Number.parseFloat(prompt("Digite o terceiro número"))
+        function calcularDesconto() {
+            
+            var preco = parseFloat(document.getElementById('preco').value);
 
-        if (a < b && a < c) {
-            alert(`O menor número é ${a}`)
-        } else if (b < a && b < c) {
-            alert(`O menor número é ${b}`)
-        } else {
-            alert(`O menor número é ${c}`)
+            
+            var desconto = preco * 0.05;
+
+            
+            document.getElementById('resultado').textContent = desconto.toFixed(2);
         }
-
-        /* && - E (AND)
-           || - OU (OR)
-           !  - NÃO (NOT) 
-        */
-        
     </script>
+
 </body>
 </html>
