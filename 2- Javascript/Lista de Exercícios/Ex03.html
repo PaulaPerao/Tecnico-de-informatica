@@ -1,32 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Desconto</title>
+    <title>Problema de três némeros inteiros</title>
 </head>
 <body>
-
-    <h1>Calculadora de Desconto</h1>
-
-    <label for="preco">Preço do Produto:</label>
-    <input type="number" id="preco" placeholder="Digite o preço do produto">
-
-    <button onclick="calcularDesconto()">Calcular Desconto</button>
-
-    <p>Valor do desconto: <span id="resultado"></span></p>
-
     <script>
-        function calcularDesconto() {
-            
-            var preco = parseFloat(document.getElementById('preco').value);
+   //Fazer um programa para ler três números inteiros. Em seguida, mostrar qual o menor dentre os três números lidos. Em caso de empate, mostrar apenas uma vez.
 
-            
-            var desconto = preco * 0.05;
+        //Entrada dos dados 
+        let a = Number.parseFloat(prompt("Digite o coeficiente A"))
+        let b = Number.parseFloat(prompt("Digite o coeficiente B"))
+        let c = Number.parseFloat(prompt("Digite o coeficiente C"))
 
-            
-            document.getElementById('resultado').textContent = desconto.toFixed(2);
+        // Calculando o delta
+        
+
+        // Verificando se delta é negativo, zero ou positivo
+        if (delta <0) {
+        alert(`Não existem raizes reais`)
+        } else {
+        // Calculando as duas raízes reais
+        let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+        let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+        alert(`x1 = ${x1.toFixed(4)}) /x2 = ${x2.toFixed(4)}`)
         }
+        
+            
     </script>
 
 </body>
