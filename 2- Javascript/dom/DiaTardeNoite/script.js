@@ -6,7 +6,7 @@ function carregar(){
     var img = window.document.getElementById('imagem')
     var corpo = window.document.getElementById('corpo')
 
-    //hora=8;
+    hora=11;
 
     if (hora >= 0 && hora <= 5) {
         horas.innerText = `Boa madrugada, agora são ${hora} hora ${minuto} min!`
@@ -14,7 +14,7 @@ function carregar(){
         corpo.style.backgroundColor = '#20100D'
     } else if (hora < 12) {
         horas.innerText = `Bom dia, agora são ${hora} hora ${minuto} min!`
-        img.src = 'img/amanhacer.jpg'
+        img.src = 'img/amanhecer.jpg'
         corpo.style.backgroundColor = '#33949B'
     } else if (hora < 18) {
         horas.innerText = `Boa tarde, agora são ${hora} hora ${minuto} min!`
