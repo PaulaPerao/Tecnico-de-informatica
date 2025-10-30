@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Admin</title>
+</head>
+<body>
+    <h1>Verificação de Administrador</h1>
+
+    <script>
+        // Cria o Array de administradores
+        const admins = ["Alice", "Maria", "Charles"];
+
+        // --- Cenário 1: Usuário Estático ---
+        document.write("<h2>Cenário 1: Usuário Estático</h2>");
+        let usuarioAtual = "David";
+        document.write(`<p>Verificando o usuário: <strong>${usuarioAtual}</strong></p>`);
+        
+        if (admins.includes(usuarioAtual)) {
+            document.write(`<p style="color: green;">Acesso total concedido. Bem-vindo(a), ${usuarioAtual}.</p>`);
+        } else {
+            document.write("<p style='color: red;'>Acesso restrito. Faça login como administrador.</p>");
+        }
+
+        document.write("<hr>");
+
+        // --- Cenário 2: Usuário via Prompt ---
+        document.write("<h2>Cenário 2: Usuário via Prompt</h2>");
+        alert("A seguir, vamos testar com um usuário digitado.");
+
+        const usuarioPrompt = prompt("Digite seu nome de usuário para verificar o acesso:");
+
+        if (usuarioPrompt) { // Verifica se o usuário não clicou em "Cancelar"
+            if (admins.includes(usuarioPrompt)) {
+                alert(`Acesso total concedido. Bem-vindo(a), ${usuarioPrompt}.`);
+                document.write(`<p>O usuário <strong>${usuarioPrompt}</strong> tem acesso de administrador.</p>`);
+            } else {
+                alert("Acesso restrito. Faça login como administrador.");
+                document.write(`<p>O usuário <strong>${usuarioPrompt}</strong> não tem acesso de administrador.</p>`);
+            }
+        } else {
+            alert("Nenhum usuário digitado.");
+            document.write("<p>O teste com prompt foi cancelado.</p>");
+        }
+    </script>
+</body>
+</html>

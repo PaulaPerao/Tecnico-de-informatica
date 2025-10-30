@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+</head>
+<body>
+    <h1>Produtos de Informática</h1>
+
+    <script>
+        // Cria o Array de produtos
+        const produtos = [
+            "Mouse Gamer",
+            "Teclado Mecânico",
+            "Monitor",
+            "Headset",
+            "Impressora"
+        ];
+
+        // Cria um laço de repetição para percorrer o Array
+        document.write("<h2>Produtos Disponíveis:</h2>");
+        for (let i = 0; i < produtos.length; i++) {
+            // Exibe a mensagem com o número do item
+            document.write(`<p>O produto ${produtos[i]} é o item número ${i + 1} do catálogo.</p>`);
+        }
+
+        // Remove o último produto
+        const produtoRemovido = produtos.pop();
+
+        // Exibe a mensagem de remoção
+        document.write(`<p style="color: red; margin-top: 20px;">O produto ${produtoRemovido} foi removido.</p>`);
+
+        // Exibe o array atualizado
+        document.write("<h3>Lista de produtos atualizada:</h3>");
+        for (let i = 0; i < produtos.length; i++) {
+            document.write(`<p>${produtos[i]}</p>`);
+        }
+    </script>
+</body>
+</html>
