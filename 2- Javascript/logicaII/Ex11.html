@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #resultado { margin-top: 20px; padding: 15px; border: 1px solid #007bff; background-color: #e7f3ff; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperatura (Celsius para Fahrenheit)</h1>
+    <p>Clique no botão para inserir a temperatura em Celsius e convertê-la para Fahrenheit.</p>
+    <button onclick="converterTemperatura()">Converter Temperatura</button>
+    <div id="resultado"></div>
+
+    <script>
+        function converterTemperatura() {
+            const celsiusStr = prompt("Digite a temperatura em Celsius (°C):");
+
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (!celsiusStr) {
+                alert("Operação cancelada.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+
+            const celsius = parseFloat(celsiusStr.replace(',', '.'));
+
+            if (isNaN(celsius)) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, digite um valor numérico válido para a temperatura.</p>";
+                return;
+            }
+
+            const fahrenheit = celsius * 1.8 + 32;
+
+            let resultadoHTML = `
+                <h2>Resultado da Conversão:</h2>
+                <p>A temperatura de <strong>${celsius.toFixed(1).replace('.',',')}°C</strong> equivale a <strong>${fahrenheit.toFixed(1).replace('.',',')}°F</strong>.</p>
+            `;
+
+            resultadoDiv.innerHTML = resultadoHTML;
+        }
+    </script>
+</body>
+</html>

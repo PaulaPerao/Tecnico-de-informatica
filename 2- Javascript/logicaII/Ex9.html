@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Média Geométrica</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #resultado { margin-top: 20px; padding: 15px; border: 1px solid #ffc107; background-color: #fff8e1; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Média Geométrica</h1>
+    <p>Clique no botão para inserir três números e calcular a média geométrica entre eles.</p>
+    <button onclick="calcularMediaGeometrica()">Calcular Média Geométrica</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularMediaGeometrica() {
+            const numAStr = prompt("Digite o primeiro número (A):");
+            const numBStr = prompt("Digite o segundo número (B):");
+            const numCStr = prompt("Digite o terceiro número (C):");
+
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (!numAStr || !numBStr || !numCStr) {
+                alert("Operação cancelada. Todos os três números são necessários.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+
+            const numA = parseFloat(numAStr.replace(',', '.'));
+            const numB = parseFloat(numBStr.replace(',', '.'));
+            const numC = parseFloat(numCStr.replace(',', '.'));
+
+            // A média geométrica é definida para números positivos
+            if (isNaN(numA) || isNaN(numB) || isNaN(numC) || numA <= 0 || numB <= 0 || numC <= 0) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, digite valores numéricos válidos e positivos para os três números.</p>";
+                return;
+            }
+
+            const produto = numA * numB * numC;
+            const mediaGeometrica = Math.pow(produto, 1/3);
+
+            const fraseResultado = `A média geométrica entre <b>${numA.toString().replace('.',',')}</b>, <b>${numB.toString().replace('.',',')}</b> e <b>${numC.toString().replace('.',',')}</b> é <strong>${mediaGeometrica.toFixed(2).replace('.',',')}</strong>.`;
+
+            resultadoDiv.innerHTML = `<h3>Resultado:</h3><p>${fraseResultado}</p>`;
+        }
+    </script>
+</body>
+</html>

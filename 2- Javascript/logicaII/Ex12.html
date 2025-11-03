@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Dólar para Real</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #resultado { margin-top: 20px; padding: 15px; border: 1px solid #28a745; background-color: #f0fff4; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Dólar para Real</h1>
+    <p>Clique no botão para calcular o valor em Reais com base na quantidade de dólares e na cotação atual.</p>
+    <button onclick="converterDolarParaReal()">Converter para Real</button>
+    <div id="resultado"></div>
+
+    <script>
+        function converterDolarParaReal() {
+            const dolaresStr = prompt("Digite a quantidade de dólares (US$):");
+            const cotacaoStr = prompt("Digite a cotação do dólar de hoje (R$):");
+
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (!dolaresStr || !cotacaoStr) {
+                alert("Operação cancelada. Ambos os valores são necessários.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+
+            const dolares = parseFloat(dolaresStr.replace(',', '.'));
+            const cotacao = parseFloat(cotacaoStr.replace(',', '.'));
+
+            if (isNaN(dolares) || isNaN(cotacao) || dolares < 0 || cotacao <= 0) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, digite valores numéricos válidos e positivos para ambos os campos.</p>";
+                return;
+            }
+
+            const reais = dolares * cotacao;
+
+            let resultadoHTML = `
+                <h2>Resultado da Conversão:</h2>
+                <p><b>Valor em Dólares:</b> US$ ${dolares.toFixed(2).replace('.',',')}</p>
+                <p><b>Cotação do Dólar:</b> R$ ${cotacao.toFixed(2).replace('.',',')}</p>
+                <hr>
+                <p><strong>Valor correspondente em Reais:</strong> R$ ${reais.toFixed(2).replace('.',',')}</p>
+            `;
+
+            resultadoDiv.innerHTML = resultadoHTML;
+        }
+    </script>
+</body>
+</html>

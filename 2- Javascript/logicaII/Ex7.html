@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculos Geométricos</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .calculo { border: 1px solid #eee; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+        button { margin-top: 10px; }
+        #resultado { margin-top: 20px; padding: 15px; border: 1px solid #007bff; background-color: #f8f9fa; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>Cálculos Geométricos</h1>
+
+    <div class="calculo">
+        <h2>Volume do Cubo</h2>
+        <p>Solicita o valor da aresta de um cubo e calcula seu volume.</p>
+        <button onclick="calcularVolumeCubo()">Calcular Volume do Cubo</button>
+    </div>
+
+    <div class="calculo">
+        <h2>Teorema de Pitágoras</h2>
+        <p>Solicita os valores dos catetos de um triângulo retângulo e calcula a hipotenusa.</p>
+        <button onclick="calcularHipotenusa()">Calcular Hipotenusa</button>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        const resultadoDiv = document.getElementById('resultado');
+
+        function calcularVolumeCubo() {
+            const arestaStr = prompt("Digite o valor da aresta do cubo:");
+            if (!arestaStr) {
+                alert("Operação cancelada.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+            const aresta = parseFloat(arestaStr.replace(',', '.'));
+            if (isNaN(aresta) || aresta <= 0) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Digite um valor válido e positivo para a aresta.</p>";
+                return;
+            }
+            const volume = Math.pow(aresta, 3);
+            resultadoDiv.innerHTML = `<h3>Resultado:</h3><p>O volume de um cubo com aresta <b>${aresta.toString().replace('.',',')}</b> é <strong>${volume.toFixed(2).replace('.',',')}</strong>.</p>`;
+        }
+
+        function calcularHipotenusa() {
+            const catetoAStr = prompt("Digite o valor do primeiro cateto (a):");
+            if (!catetoAStr) {
+                alert("Operação cancelada.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+            const catetoBStr = prompt("Digite o valor do segundo cateto (b):");
+            if (!catetoBStr) {
+                alert("Operação cancelada.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+
+            const catetoA = parseFloat(catetoAStr.replace(',', '.'));
+            const catetoB = parseFloat(catetoBStr.replace(',', '.'));
+
+            if (isNaN(catetoA) || isNaN(catetoB) || catetoA <= 0 || catetoB <= 0) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Digite valores válidos e positivos para ambos os catetos.</p>";
+                return;
+            }
+
+            const somaDosQuadrados = Math.pow(catetoA, 2) + Math.pow(catetoB, 2);
+            const hipotenusa = Math.sqrt(somaDosQuadrados);
+
+            resultadoDiv.innerHTML = `<h3>Resultado:</h3><p>Para um triângulo retângulo com catetos <b>${catetoA.toString().replace('.',',')}</b> e <b>${catetoB.toString().replace('.',',')}</b>, a hipotenusa é <strong>${hipotenusa.toFixed(2).replace('.',',')}</strong>.</p>`;
+        }
+    </script>
+</body>
+</html>

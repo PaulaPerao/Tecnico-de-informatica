@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Separador de Data</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #resultado { margin-top: 20px; padding: 15px; border: 1px solid #fd7e14; background-color: #fff8f2; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>DESAFIO 3: Separador de Data (Matemático)</h1>
+    <p>Clique no botão para inserir uma data no formato DDMMAAAA e separá-la em dia, mês e ano usando apenas matemática.</p>
+    <button onclick="separarData()">Separar Data</button>
+    <div id="resultado"></div>
+
+    <script>
+        function separarData() {
+            const dataStr = prompt("Digite a data no formato DDMMAAAA (ex: 10112025):");
+            
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (!dataStr) {
+                alert("Operação cancelada.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+
+            const dataCompleta = parseInt(dataStr);
+
+            // Validação básica para garantir que é um número de 8 dígitos
+            if (isNaN(dataCompleta) || dataStr.length !== 8) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, digite um número de 8 dígitos no formato DDMMAAAA.</p>";
+                return;
+            }
+
+            // 1. Extrai o ano (resto da divisão por 10000)
+            const ano = dataCompleta % 10000;
+
+            // 2. Remove o ano para obter a parte de dia e mês (divisão inteira por 10000)
+            const parteDiaMes = Math.floor(dataCompleta / 10000);
+
+            // 3. Extrai o mês da parteDiaMes (resto da divisão por 100)
+            const mes = parteDiaMes % 100;
+
+            // 4. Remove o mês para obter o dia (divisão inteira por 100)
+            const dia = Math.floor(parteDiaMes / 100);
+            
+            // Validação extra para dia e mês
+            if (dia < 1 || dia > 31 || mes < 1 || mes > 12) {
+                 resultadoDiv.innerHTML = `<p style='color: red;'>Erro: A data digitada (${dia}/${mes}/${ano}) parece inválida.</p>`;
+                return;
+            }
+
+            resultadoDiv.innerHTML = `
+                <h2>Data Separada:</h2>
+                <p><b>Data Digitada:</b> ${dataCompleta}</p>
+                <hr>
+                <p><strong>Dia:</strong> ${dia}</p>
+                <p><strong>Mês:</strong> ${mes}</p>
+                <p><strong>Ano:</strong> ${ano}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

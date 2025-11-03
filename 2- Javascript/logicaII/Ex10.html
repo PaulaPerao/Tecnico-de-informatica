@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Juros Simples</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #resultado { margin-top: 20px; padding: 15px; border: 1px solid #6f42c1; background-color: #f5f1fa; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Montante com Juros Simples</h1>
+    <p>Clique no botão para calcular o valor final de um investimento com juros simples.</p>
+    <button onclick="calcularJurosSimples()">Calcular Montante</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularJurosSimples() {
+            const principalStr = prompt("Digite o valor principal (R$):");
+            const taxaStr = prompt("Digite a taxa de juros em decimal (Ex: 0.05 para 5%):");
+            const mesesStr = prompt("Digite o número de meses:");
+
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (!principalStr || !taxaStr || !mesesStr) {
+                alert("Operação cancelada. Todos os três valores são necessários.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+
+            const principal = parseFloat(principalStr.replace(',', '.'));
+            const taxa = parseFloat(taxaStr.replace(',', '.'));
+            const meses = parseInt(mesesStr);
+
+            if (isNaN(principal) || isNaN(taxa) || isNaN(meses) || principal <= 0 || taxa < 0 || meses <= 0) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, digite valores numéricos válidos e positivos para todos os campos.</p>";
+                return;
+            }
+
+            const montante = principal * (1 + taxa * meses);
+
+            let resultadoHTML = `
+                <h2>Resultado do Investimento:</h2>
+                <p><b>Valor Principal:</b> R$ ${principal.toFixed(2).replace('.',',')}</p>
+                <p><b>Taxa de Juros:</b> ${(taxa * 100).toFixed(2).replace('.',',')}% ao mês</p>
+                <p><b>Período:</b> ${meses} meses</p>
+                <hr>
+                <p><strong>Montante Final:</strong> R$ ${montante.toFixed(2).replace('.',',')}</p>
+            `;
+
+            resultadoDiv.innerHTML = resultadoHTML;
+        }
+    </script>
+</body>
+</html>

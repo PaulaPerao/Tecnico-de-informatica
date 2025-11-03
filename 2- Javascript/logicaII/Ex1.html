@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #resultados { margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Quatro operações básicas da matemática</h1>
+    <button onclick="iniciarCalculo()">Iniciar Cálculo</button>
+    <div id="resultados"></div>
+
+    <script>
+        function iniciarCalculo() {
+            const num1Str = prompt("Digite o primeiro número inteiro:");
+            const num2Str = prompt("Digite o segundo número inteiro:");
+
+            const num1 = parseInt(num1Str);
+            const num2 = parseInt(num2Str);
+
+            const resultadosDiv = document.getElementById('resultados');
+
+            if (isNaN(num1) || isNaN(num2)) {
+                resultadosDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, digite apenas números inteiros válidos.</p>";
+                return;
+            }
+
+            const soma = num1 + num2;
+            const subtracao = num1 - num2;
+            const multiplicacao = num1 * num2;
+            
+            let divisao;
+            if (num2 !== 0) {
+                divisao = (num1 / num2).toFixed(2); // Arredonda para 2 casas decimais
+            } else {
+                divisao = "Não é possível dividir por zero.";
+            }
+
+            let resultadoHTML = `
+                <h2>Resultados para ${num1} e ${num2}:</h2>
+                <p><strong>Soma:</strong> ${soma}</p>
+                <p><strong>Subtração:</strong> ${subtracao}</p>
+                <p><strong>Multiplicação:</strong> ${multiplicacao}</p>
+                <p><strong>Divisão:</strong> ${divisao}</p>
+            `;
+
+            resultadosDiv.innerHTML = resultadoHTML;
+        }
+    </script>
+</body>
+</html>

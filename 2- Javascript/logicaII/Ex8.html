@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Área do Círculo</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #resultado { margin-top: 20px; padding: 15px; border: 1px solid #dc3545; background-color: #fdf2f2; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Área do Círculo</h1>
+    <p>Clique no botão para inserir o raio de um círculo e calcular sua área.</p>
+    <button onclick="calcularAreaCirculo()">Calcular Área do Círculo</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularAreaCirculo() {
+            const raioStr = prompt("Digite o valor do raio do círculo:");
+            
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (!raioStr) {
+                alert("Operação cancelada.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+
+            const raio = parseFloat(raioStr.replace(',', '.'));
+
+            if (isNaN(raio) || raio <= 0) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, digite um valor numérico válido e positivo para o raio.</p>";
+                return;
+            }
+
+            const PI = Math.PI;
+            const area = PI * Math.pow(raio, 2);
+
+            const fraseResultado = `A área de um círculo com raio de <b>${raio.toString().replace('.',',')}</b> é <strong>${area.toFixed(2).replace('.',',')}</strong>.`;
+
+            resultadoDiv.innerHTML = `<h3>Resultado:</h3><p>${fraseResultado}</p>`;
+        }
+    </script>
+</body>
+</html>

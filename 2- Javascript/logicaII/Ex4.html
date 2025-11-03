@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #resultado { margin-top: 20px; border: 1px solid #ccc; padding: 15px; background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas (Metros)</h1>
+    <p>Clique no botão para inserir uma medida em metros e convertê-la.</p>
+    <button onclick="iniciarConversao()">Converter Medida</button>
+    <div id="resultado"></div>
+
+    <script>
+        function iniciarConversao() {
+            const metrosStr = prompt("Digite a medida em metros (ex: 1.85):");
+            
+            const resultadoDiv = document.getElementById('resultado');
+            
+            if (!metrosStr) {
+                alert("Operação cancelada.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+
+            const metros = parseFloat(metrosStr.replace(',', '.'));
+
+            if (isNaN(metros) || metros < 0) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, digite um valor numérico válido e positivo.</p>";
+                return;
+            }
+
+            const centimetros = metros * 100;
+            const milimetros = metros * 1000;
+
+            let resultadoHTML = `
+                <h2>Resultados da Conversão para ${metros.toString().replace('.',',')}m:</h2>
+                <ul>
+                    <li><b>Em centímetros:</b> ${centimetros.toFixed(2).replace('.',',')} cm</li>
+                    <li><b>Em milímetros:</b> ${milimetros.toFixed(2).replace('.',',')} mm</li>
+                </ul>
+            `;
+
+            resultadoDiv.innerHTML = resultadoHTML;
+        }
+    </script>
+</body>
+</html>

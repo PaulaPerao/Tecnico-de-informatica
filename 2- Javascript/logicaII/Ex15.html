@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Minutos para Horas</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #resultado { margin-top: 20px; padding: 15px; border: 1px solid #20c997; background-color: #e9fbf5; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>DESAFIO 1: Conversor de Minutos para Horas</h1>
+    <p>Clique no botão para inserir um valor em minutos e convertê-lo para horas e minutos.</p>
+    <button onclick="converterMinutos()">Converter Minutos</button>
+    <div id="resultado"></div>
+
+    <script>
+        function converterMinutos() {
+            const totalMinutosStr = prompt("Digite o total de minutos:");
+
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (!totalMinutosStr) {
+                alert("Operação cancelada.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+
+            const totalMinutos = parseInt(totalMinutosStr);
+
+            if (isNaN(totalMinutos) || totalMinutos < 0) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, digite um número inteiro válido e positivo.</p>";
+                return;
+            }
+
+            // Calcula as horas inteiras
+            const horas = Math.floor(totalMinutos / 60);
+            // Calcula os minutos restantes usando o operador de módulo (%)
+            const minutosRestantes = totalMinutos % 60;
+
+            const fraseResultado = `${totalMinutos} minutos equivalem a <strong>${horas} horas e ${minutosRestantes} minutos</strong>.`;
+
+            resultadoDiv.innerHTML = `<h3>Resultado:</h3><p>${fraseResultado}</p>`;
+        }
+    </script>
+</body>
+</html>

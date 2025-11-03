@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Média de Notas</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #resultado { margin-top: 20px; padding: 15px; border: 1px solid #17a2b8; background-color: #f1fafd; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Média de Notas</h1>
+    <p>Clique no botão para inserir as três notas do aluno e calcular a média final arredondada.</p>
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularMedia() {
+            const nota1Str = prompt("Digite a primeira nota:");
+            const nota2Str = prompt("Digite a segunda nota:");
+            const nota3Str = prompt("Digite a terceira nota:");
+
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (!nota1Str || !nota2Str || !nota3Str) {
+                alert("Operação cancelada. Todas as três notas são necessárias.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+
+            const nota1 = parseFloat(nota1Str.replace(',', '.'));
+            const nota2 = parseFloat(nota2Str.replace(',', '.'));
+            const nota3 = parseFloat(nota3Str.replace(',', '.'));
+
+            if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3) || nota1 < 0 || nota2 < 0 || nota3 < 0) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, digite valores numéricos válidos e positivos para as notas.</p>";
+                return;
+            }
+
+            const media = (nota1 + nota2 + nota3) / 3;
+            const mediaArredondada = Math.round(media);
+
+            let resultadoHTML = `
+                <h2>Resultado da Média:</h2>
+                <p><b>Notas:</b> ${nota1.toFixed(1).replace('.',',')}, ${nota2.toFixed(1).replace('.',',')}, ${nota3.toFixed(1).replace('.',',')}</p>
+                <p><b>Média Simples:</b> ${media.toFixed(2).replace('.',',')}</p>
+                <hr>
+                <p><strong>Média Final (arredondada para o inteiro mais próximo):</strong> ${mediaArredondada}</p>
+            `;
+
+            resultadoDiv.innerHTML = resultadoHTML;
+        }
+    </script>
+</body>
+</html>

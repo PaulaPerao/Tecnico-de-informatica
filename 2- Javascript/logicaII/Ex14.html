@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Empréstimo (Juros Compostos)</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #resultado { margin-top: 20px; padding: 15px; border: 1px solid #6f42c1; background-color: #f5f1fa; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>Simulador de Empréstimo (Juros Compostos)</h1>
+    <p>Clique no botão para simular o custo de um empréstimo pessoal.</p>
+    <button onclick="simularEmprestimo()">Simular Empréstimo</button>
+    <div id="resultado"></div>
+
+    <script>
+        function simularEmprestimo() {
+            const principalStr = prompt("Digite o valor principal do empréstimo (R$):");
+            const taxaStr = prompt("Digite a taxa de juros mensal em decimal (Ex: 0.03 para 3%):");
+            const prazoStr = prompt("Digite o prazo total em meses:");
+
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (!principalStr || !taxaStr || !prazoStr) {
+                alert("Operação cancelada. Todos os valores são necessários.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+
+            const principal = parseFloat(principalStr.replace(',', '.'));
+            const taxa = parseFloat(taxaStr.replace(',', '.'));
+            const prazo = parseInt(prazoStr);
+
+            if (isNaN(principal) || isNaN(taxa) || isNaN(prazo) || principal <= 0 || taxa < 0 || prazo <= 0) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, digite valores numéricos válidos e positivos para todos os campos.</p>";
+                return;
+            }
+
+            // Fórmula: M = C * (1 + i)^t
+            const montante = principal * Math.pow((1 + taxa), prazo);
+            const valorParcela = montante / prazo;
+            const juros = montante - principal;
+
+            // Exibe os resultados em alerts separados, formatados com vírgula
+            alert(`Montante Final a ser Pago: R$ ${montante.toFixed(2).replace('.',',')}`);
+            alert(`Valor da Parcela Mensal: R$ ${valorParcela.toFixed(2).replace('.',',')}`);
+            alert(`Total de Juros Pagos: R$ ${juros.toFixed(2).replace('.',',')}`);
+
+            // Exibe um resumo na página também para melhor visualização
+            resultadoDiv.innerHTML = `
+                <h2>Resumo da Simulação:</h2>
+                <p><b>Montante Final:</b> R$ ${montante.toFixed(2).replace('.',',')}</p>
+                <p><b>Valor da Parcela:</b> ${prazo}x de R$ ${valorParcela.toFixed(2).replace('.',',')}</p>
+                <p><b>Total em Juros:</b> R$ ${juros.toFixed(2).replace('.',',')}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

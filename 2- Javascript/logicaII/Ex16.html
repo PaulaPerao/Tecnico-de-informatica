@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Estacionamento</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .time-input { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+        .time-input label { font-weight: bold; }
+        input[type="number"] { width: 70px; padding: 5px; }
+        button { padding: 10px 15px; font-size: 1em; cursor: pointer; }
+        #resultado { margin-top: 20px; padding: 15px; border: 1px solid #007bff; background-color: #f8f9fa; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>DESAFIO 2: Cálculo de Estacionamento</h1>
+    
+    <div class="time-input">
+        <label>Entrada:</label>
+        <input type="number" id="he" min="0" max="23" placeholder="Hora">
+        <span>:</span>
+        <input type="number" id="me" min="0" max="59" placeholder="Minuto">
+    </div>
+
+    <div class="time-input">
+        <label>Saída: &nbsp;&nbsp;&nbsp;</label>
+        <input type="number" id="hs" min="0" max="23" placeholder="Hora">
+        <span>:</span>
+        <input type="number" id="ms" min="0" max="59" placeholder="Minuto">
+    </div>
+
+    <button onclick="calcularEstacionamento()">Calcular Valor</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcularEstacionamento() {
+            const he = parseInt(document.getElementById('he').value);
+            const me = parseInt(document.getElementById('me').value);
+            const hs = parseInt(document.getElementById('hs').value);
+            const ms = parseInt(document.getElementById('ms').value);
+
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (isNaN(he) || isNaN(me) || isNaN(hs) || isNaN(ms) || he < 0 || he > 23 || me < 0 || me > 59 || hs < 0 || hs > 23 || ms < 0 || ms > 59) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, preencha todos os campos com horários válidos (Hora: 0-23, Minuto: 0-59).</p>";
+                return;
+            }
+
+            const minutosEntrada = (he * 60) + me;
+            const minutosSaida = (hs * 60) + ms;
+
+            let duracaoMinutos;
+            // Verifica se a saída é no dia seguinte (dentro de 24h)
+            if (minutosSaida < minutosEntrada) {
+                duracaoMinutos = (minutosSaida + 24 * 60) - minutosEntrada;
+            } else {
+                duracaoMinutos = minutosSaida - minutosEntrada;
+            }
+            
+            if (duracaoMinutos === 0) {
+                 resultadoDiv.innerHTML = "<p>O tempo de permanência foi de 0 minutos. Custo é R$ 0,00.</p>";
+                 return;
+            }
+
+            // O preço é R$ 4,00 por hora, o que equivale a 4/60 por minuto.
+            const precoPorMinuto = 4 / 60;
+            const custoTotal = duracaoMinutos * precoPorMinuto;
+
+            // Calcula horas e minutos para exibição
+            const displayHoras = Math.floor(duracaoMinutos / 60);
+            const displayMinutos = duracaoMinutos % 60;
+
+            resultadoDiv.innerHTML = `
+                <h2>Recibo do Estacionamento:</h2>
+                <p><b>Tempo de Permanência:</b> ${displayHoras} horas e ${displayMinutos} minutos.</p>
+                <p><strong>Valor Total a Pagar:</strong> R$ ${custoTotal.toFixed(2).replace('.',',')}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

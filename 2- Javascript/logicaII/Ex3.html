@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Salário Líquido</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #resultado { margin-top: 20px; border: 1px solid #ccc; padding: 15px; background-color: #f9f9f9; }
+        .valor { font-weight: bold; }
+        .negativo { color: red; }
+        .positivo { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Salário Líquido</h1>
+    <p>Clique no botão para calcular o salário líquido com base no salário bruto.</p>
+    <button onclick="calcularSalario()">Calcular Salário</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularSalario() {
+            const salarioBrutoStr = prompt("Digite o seu salário bruto (Ex: 2500.50):");
+            
+            const resultadoDiv = document.getElementById('resultado');
+            
+            if (!salarioBrutoStr) {
+                alert("Operação cancelada.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+
+            const salarioBruto = parseFloat(salarioBrutoStr.replace(',', '.'));
+
+            if (isNaN(salarioBruto) || salarioBruto < 0) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, digite um valor de salário válido.</p>";
+                return;
+            }
+
+            const desconto = 120.00;
+            const salarioLiquido = salarioBruto - desconto;
+
+            let resultadoHTML = `
+                <h2>Demonstrativo de Pagamento:</h2>
+                <p>Salário Bruto: <span class="valor">R$ ${salarioBruto.toFixed(2).replace('.', ',')}</span></p>
+                <p>Desconto Fixo: <span class="valor negativo">- R$ ${desconto.toFixed(2).replace('.', ',')}</span></p>
+                <hr>
+                <p><strong>Salário Líquido a Receber:</strong> <span class="valor positivo">R$ ${salarioLiquido.toFixed(2).replace('.', ',')}</span></p>
+            `;
+
+            resultadoDiv.innerHTML = resultadoHTML;
+        }
+    </script>
+</body>
+</html>

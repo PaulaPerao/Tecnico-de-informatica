@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Consumo de Combustível</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #resultado { margin-top: 20px; padding: 15px; border: 1px solid #28a745; background-color: #f0fff4; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Consumo de Combustível</h1>
+    <p>Clique no botão para calcular os litros de combustível gastos em uma viagem.</p>
+    <button onclick="calcularConsumo()">Calcular Consumo</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularConsumo() {
+            const distanciaStr = prompt("Digite a distância a ser percorrida (em km):");
+            const consumoMedioStr = prompt("Digite o consumo médio do veículo (km por litro):");
+
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (!distanciaStr || !consumoMedioStr) {
+                alert("Operação cancelada. Ambos os valores são necessários.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+
+            const distancia = parseFloat(distanciaStr.replace(',', '.'));
+            const consumoMedio = parseFloat(consumoMedioStr.replace(',', '.'));
+
+            if (isNaN(distancia) || isNaN(consumoMedio) || distancia <= 0 || consumoMedio <= 0) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, digite valores numéricos válidos e positivos para ambos os campos.</p>";
+                return;
+            }
+
+            const litrosConsumidos = distancia / consumoMedio;
+
+            const fraseResultado = `Para percorrer ${distancia.toFixed(2).replace('.',',')} km, foram necessários ${litrosConsumidos.toFixed(2).replace('.',',')} litros de combustível.`;
+
+            resultadoDiv.innerHTML = `<p>${fraseResultado}</p>`;
+        }
+    </script>
+</body>
+</html>

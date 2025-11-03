@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construtor de Frases</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #fraseFinal { margin-top: 20px; padding: 15px; border: 1px solid #007BFF; background-color: #f0f8ff; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <h1>Construtor de Frases</h1>
+    <p>Clique no botão para montar uma frase parte por parte.</p>
+    <button onclick="montarFrase()">Montar Frase</button>
+    <div id="fraseFinal"></div>
+
+    <script>
+        function montarFrase() {
+            const sujeito = prompt("Digite o sujeito da frase (Ex: O gato):");
+            if (!sujeito) {
+                alert("Operação cancelada. O sujeito é obrigatório.");
+                return;
+            }
+
+            const verbo = prompt("Digite o verbo (Ex: comeu):");
+            if (!verbo) {
+                alert("Operação cancelada. O verbo é obrigatório.");
+                return;
+            }
+
+            const complemento = prompt("Digite o complemento (Ex: o rato):");
+            if (!complemento) {
+                alert("Operação cancelada. O complemento é obrigatório.");
+                return;
+            }
+            
+            const pontoFinal = prompt("Digite a pontuação final (Ex: ! ou . ou ?):");
+            if (!pontoFinal) {
+                alert("Operação cancelada. A pontuação é obrigatória.");
+                return;
+            }
+
+            // Combina as partes para formar a frase final
+            const fraseCompleta = `${sujeito} ${verbo} ${complemento}${pontoFinal}`;
+
+            // Exibe a frase final na tela
+            const fraseDiv = document.getElementById('fraseFinal');
+            fraseDiv.innerHTML = `<p><strong>Sua frase montada é:</strong></p><p>${fraseCompleta}</p>`;
+        }
+    </script>
+</body>
+</html>

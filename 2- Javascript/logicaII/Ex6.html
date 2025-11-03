@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Área do Quadrado</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #resultado { margin-top: 20px; padding: 15px; border: 1px solid #17a2b8; background-color: #f1fafd; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Área do Quadrado</h1>
+    <p>Clique no botão para inserir a medida do lado de um quadrado e calcular sua área.</p>
+    <button onclick="calcularArea()">Calcular Área</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularArea() {
+            const ladoStr = prompt("Digite a medida do lado do quadrado:");
+            
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (!ladoStr) {
+                alert("Operação cancelada.");
+                resultadoDiv.innerHTML = "";
+                return;
+            }
+
+            const lado = parseFloat(ladoStr.replace(',', '.'));
+
+            if (isNaN(lado) || lado <= 0) {
+                resultadoDiv.innerHTML = "<p style='color: red;'>Erro: Por favor, digite um valor numérico válido e positivo.</p>";
+                return;
+            }
+
+            // Calcula a área usando Math.pow(base, expoente)
+            const area = Math.pow(lado, 2);
+
+            const fraseResultado = `A área de um quadrado com lado de ${lado.toString().replace('.',',')} é <strong>${area.toFixed(2).replace('.',',')}</strong>.`;
+
+            resultadoDiv.innerHTML = `<p>${fraseResultado}</p>`;
+        }
+    </script>
+</body>
+</html>
