@@ -16,7 +16,10 @@ body {
 header {
     background-color: rgb(57, 91, 245);
 }
-
+.logo {
+    display: inline-block;
+    width: 100px;
+}
 .corpo {
     background-color: lightblue;
 }
