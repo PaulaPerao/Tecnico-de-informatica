@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título e Parágrafo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="criarBtn">CRIAR</button>
+
+    <script>
+        const criarBtn = document.getElementById('criarBtn');
+
+        criarBtn.addEventListener('click', () => {
+            criarBtn.style.display = 'none';
+
+            const container = document.createElement('div');
+            container.id = 'container';
+
+            const titulo = document.createElement('h1');
+            titulo.textContent = 'Título';
+
+            const paragrafo = document.createElement('h2');
+            paragrafo.textContent = 'Parágrafo';
+
+            container.appendChild(titulo);
+            container.appendChild(paragrafo);
+
+            document.body.appendChild(container);
+        });
+    </script>
+</body>
+
+</html>
