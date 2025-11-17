@@ -32,8 +32,6 @@
      box-shadow: 0 2px 5px rgba(190, 41, 41, 0.1);
  }
 
- /* PAGINA SOBRE*/
-
  .menu {
      list-style: none;
      display: inline-flex;
@@ -69,12 +67,6 @@
          text-align: center;
      }
 
-     .navegacao {
-         background-color: #646363;
-         position: sticky;
-         top: 0;
-     }
-
      .navegacao a {
          margin: 0 1rem;
          font-size: 1.4rem;
@@ -90,148 +82,32 @@
      }
 
      .body {
+         text-align: center;
          background-color: #e9a3e3;
      }
 
-     .sobre {
-         padding: 50px;
-         margin-top: 50px;
-     }
+    .whatsapp-icon-button {
+    /* Estilo do Círculo */
+    background-color: #21e669;
+    color: white;
+    width: 60px; /* Largura e Altura iguais para ser um círculo */
+    height: 60px; 
+    border-radius: 50%;
+    display: flex; /* Centraliza o ícone */
+    justify-content: center;
+    align-items: center;
+    font-size: 30px; /* Tamanho do ícone */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
-     .historia {
-         padding: 35px;
-     }
+    /* Posicionamento Fixo */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.3s;
+}
 
-     .missao {
-         padding: 35px;
-     }
-
-     .equipedes {
-         padding: 35px;
-     }
-
-     /* PAGINA DESTINOS*/
-
-     .national {
-         padding: 15px 20px 15px 20px;
-         background-color: rgb(238, 238, 156);
-     }
-
-     .nacional h2 {
-         text-align: center;
-     }
-
-     .internacional h2 {
-         text-align: center;
-     }
-
-     .international {
-         padding: 15px 20px 15px 20px;
-         margin-top: 20px;
-         background-color: rgb(182, 182, 117);
-     }
-
-     .topo {
-         padding: 20px;
-     }
-
-     .img {
-         text-align: center;
-     }
-
-     .img img:hover {
-         width: 480px;
-     }
-
-     .pe,
-     .pr,
-     .rj,
-     .ba,
-     .ma,
-     .rs,
-     .ms,
-     .mg,
-     .cd,
-     .ce {
-         padding: 30px;
-         margin-top: 15px;
-     }
-
-     .pe:hover,
-     .pr:hover,
-     .rj:hover,
-     .ba:hover,
-     .ma:hover,
-     .rs:hover,
-     .ms:hover,
-     .mg:hover,
-     .cd:hover,
-     .ce:hover {
-         background-color: beige;
-     }
-
-     .pf,
-     .ny,
-     .roma,
-     .toquio,
-     .bar,
-     .dubai,
-     .sydnei,
-     .africa,
-     .tailandia,
-     .londres {
-         padding: 35px;
-     }
-
-
-     .pf:hover,
-     .ny:hover,
-     .roma:hover,
-     .toquio:hover,
-     .bar:hover,
-     .dubai:hover,
-     .sydnei:hover,
-     .africa:hover,
-     .tailandia:hover,
-     .londres:hover {
-         background-color: beige;
-     }
-
-     /* PAGINA PROMOÇÃO*/
-
-     .national h2 {
-         text-align: left;
-     }
-
-     .international h2 {
-         text-align: left;
-     }
-
-     .nacional .title {
-         text-align: center;
-     }
-
-     .internacional .title {
-         text-align: center;
-     }
-
-     .nacional,
-     .internacional {
-         padding-top: 30px;
-     }
-
-     /* PAGINA DEPOIMENTO*/
-
-     .depoimento h2 {
-         text-align: left;
-     }
-
-
-     /* PAGINA INDEX*/
-
-     .body {
-         padding: 20px;
-         border-radius: 50px;
-         text-align: center;
-     }
-     }
+.whatsapp-icon-button:hover {
+    background-color: #1FAF59;
+    transform: scale(1.05); /* Efeito de pequeno crescimento ao passar o mouse */
+}
