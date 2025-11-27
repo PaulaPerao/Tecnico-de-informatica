@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 27/11</title>
+</head>
+<body>
+    <button id="create-div">Clique aqui</button>
+    <script>
+        const button = document.getElementById('create-div');
+
+        button.addEventListener('click', () => {
+            const newDiv = document.createElement('div');
+            const newParagraph = document.createElement('p');
+            newParagraph.textContent = 'Este é um novo parágrafo dentro de uma div.';
+            newDiv.appendChild(newParagraph);
+            document.body.appendChild(newDiv);
+        });
+    </script>
+</body>
+</html>
