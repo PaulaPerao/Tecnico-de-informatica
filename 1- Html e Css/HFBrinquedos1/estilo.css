@@ -1,0 +1,113 @@
+ body {
+     font-family: poppins;
+     background-color: rgb(240, 225, 15);
+ }
+
+ footer {
+     text-align: center;
+     background-color: rgb(9, 112, 40);
+     padding: 20px;
+     margin-top: 10px;
+     color: rgb(9, 196, 65);
+     border-radius: 50px;
+
+ }
+
+ footer a {
+     color: #0aeb3b;
+ }
+
+ header {
+     background-color: rgb(6, 109, 66);
+     min-height: 150px;
+     margin-bottom: 10px;
+     padding: 20px;
+     border-radius: 50px;
+ }
+
+ nav {
+     width: 100%;
+     text-align: center;
+     padding: 10px 0;
+     box-shadow: 0 2px 5px rgba(190, 41, 41, 0.1);
+ }
+
+ .menu {
+     list-style: none;
+     display: inline-flex;
+     margin: 0;
+     padding: 0;
+     background-color: #109456;
+ }
+ 
+ .menu li a {
+     display: block;
+     padding: 15px 30px;
+     color: rgb(31, 15, 15);
+     text-decoration: none;
+     transition: 0.3s;
+ }
+
+ .menu li a:hover {
+     background-color: rgb(6, 109, 66);
+ }
+
+ .logo {
+     text-align: center;
+ }
+
+     h1 {
+         text-align: center;
+         text-transform: uppercase;
+     }
+
+     h2 {
+         text-align: center;
+         text-transform: uppercase;
+         text-align: center;
+     }
+
+     .navegacao a {
+         margin: 0 1rem;
+         font-size: 1.4rem;
+         color: #fff;
+         text-decoration: none;
+     }
+
+     nav a:hover {
+         color: #fff;
+         border-bottom: 0.1rem solid #d3ad7f;
+         padding-bottom: 0.5rem;
+         font-size: 2rem;
+     }
+
+     .body {
+         text-align: center;
+         background-color: #e9a3e3;
+     }
+
+    .whatsapp-icon-button {
+    /* Estilo do Círculo */
+    background-color: #21e669;
+    color: white;
+    width: 60px; /* Largura e Altura iguais para ser um círculo */
+    height: 60px; 
+    border-radius: 50%;
+    display: flex; /* Centraliza o ícone */
+    justify-content: center;
+    align-items: center;
+    font-size: 30px; /* Tamanho do ícone */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    /* Posicionamento Fixo */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.whatsapp-icon-button:hover {
+    background-color: #1FAF59;
+    transform: scale(1.05); /* Efeito de pequeno crescimento ao passar o mouse */
+}
