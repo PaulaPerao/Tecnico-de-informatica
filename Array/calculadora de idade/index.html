@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de Números</title>
+    <title>Verificador de Idade</title>
+     <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+     <header>
+        <h1>Verificador de Idade</h1>
+     </header>
+     <section>
+         <div>
+             <p>
+                Ano de Nascimento:
+                <input type="number" name="ano" id="ano" min="1900" max="2025">
+             </p>
+            <br>
+            <select name="flista" id="flista" size="10"></select>
+            <br><br>
+            <input type="button" value="Finalizar" onclick="finalizar()">
+            <p>
+                Sexo:
+                <input type="radio" name="radsex" id="masc" value="M" checked>
+                <label for="masc">Masculino</label>
+                <input type="radio" name="radsex" id="fem" value="F">
+                <label for="fem">Feminino</label>
+            </p>
+            <p>
+                <input type="button" value="Verificar" onclick="clicar()">
+            </p>
+         </div>
+         <div id="res">
+            Preencha os dados acima para ver o resultado!
+            <img id="imagem" src="">
+         </div>
+     </section>
+     <footer>
+    <script src="script.js"></script>
+</body>
+</html>
