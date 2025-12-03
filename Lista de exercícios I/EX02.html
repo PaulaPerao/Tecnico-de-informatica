@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Área e Perímetro</title>
+</head>
+<body>
+<h1>Calculadora de Área e Perímetro de Sala</h1>
+
+    <div>
+        <label for="comprimento">Digite o comprimento da sala (em metros):</label><br>
+        <input type="number" id="comprimento" placeholder="Ex: 5.5">
+    </div>
+ 
+    <div>
+        <label for="largura">Digite a largura da sala (em metros):</label><br>
+        <input type="number" id="largura" placeholder="Ex: 4.0">
+    </div>
+ 
+    <button onclick="calcular()">Calcular</button>
+ 
+    <p>A área da sala é: <span id="resultadoArea"></span></p>
+    <p>O perímetro da sala é: <span id="resultadoPerimetro"></span></p>
+ 
+<script>
+    function calcular() {
+        const comprimento = parseFloat(document.getElementById('comprimento').value);
+        const largura = parseFloat(document.getElementById('largura').value);
+        const areaSpan = document.getElementById('resultadoArea');
+        const perimetroSpan = document.getElementById('resultadoPerimetro');
+ 
+        if (!isNaN(comprimento) && !isNaN(largura) && comprimento > 0 && largura > 0) {
+            const area = comprimento * largura;
+            const perimetro = 2 * (comprimento + largura);
+            areaSpan.textContent = `${area.toFixed(2)} metros quadrados.`;
+            perimetroSpan.textContent = `${perimetro.toFixed(2)} metros.`;
+        } else {
+            areaSpan.textContent = "Por favor, insira valores válidos e positivos.";
+            perimetroSpan.textContent = ""; // Limpa o campo do perímetro em caso de erro
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Calculadora de Área</title>
+   
+</head>
+<body>
+<h1>Calculadora de Área da Sala</h1>
+
+    <div>
+        <label for="comprimento">Digite o comprimento da sala (em metros):</label><br>
+        <input type="number" id="comprimento" placeholder="Ex: 5.5">
+    </div>
+
+    <div>
+        <label for="largura">Digite a largura da sala (em metros):</label><br>
+        <input type="number" id="largura" placeholder="Ex: 4.0">
+    </div>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <p>A área da sala é: <span id="resultadoArea"></span></p>
+
+<script>
+    function calcular() {
+        const comprimento = parseFloat(document.getElementById('comprimento').value);
+        const largura = parseFloat(document.getElementById('largura').value);
+        const areaSpan = document.getElementById('resultadoArea');
+
+        if (!isNaN(comprimento) && !isNaN(largura) && comprimento > 0 && largura > 0) {
+            const area = comprimento * largura;
+            areaSpan.textContent = `${area.toFixed(2)} metros quadrados.`;
+        } else {
+            areaSpan.textContent = "Por favor, insira valores válidos e positivos.";
+        }
+    }
+</script>
+    
+</body>
+</html>

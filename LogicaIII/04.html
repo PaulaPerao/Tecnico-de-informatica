@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Raiz Quadrada</title>
+</head>
+<body>
+
+    <h1>Calculadora de Raiz Quadrada</h1>
+    <form id="raizForm">
+        <label for="numero">Digite um número:</label>
+        <input type="number" id="numero" required><br><br>
+        <button type="button" onclick="calcularRaiz()">Calcular Raiz Quadrada</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularRaiz() {
+            const numero = parseFloat(document.getElementById('numero').value);
+            const resultadoP = document.getElementById('resultado');
+
+            if (!isNaN(numero)) {
+                if (numero < 0) {
+                    resultadoP.textContent = "Não existe raiz quadrada de número negativo no conjunto dos números reais.";
+                } else {
+                    const raiz = Math.sqrt(numero);
+                    resultadoP.textContent = `A raiz quadrada de ${numero} é: ${raiz}`;
+                }
+            } else {
+                resultadoP.textContent = "Por favor, digite um número válido.";
+            }
+        }
+    </script>
+
+</body>
+</html>
